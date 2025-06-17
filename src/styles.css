@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global box-sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  /* Paleta completa */
+  --clr-olive:       #9c9c64;
+  --clr-beige:       #cfb195;
+  --clr-cream:       #cdbfa7;
+  --clr-blush:       #ecc4b4;
+  --clr-terra:       #dc742c;
+  --clr-peach:       #e49064;
+  --clr-sienna:      #dc844c;
+  --clr-copper:      #cc7850;
+  --clr-apricot:     #e0782c;
+
+  /* Alias semánticos */
+  --color-bg:        var(--clr-cream);
+  --color-text:      var(--clr-olive);
+  --color-accent:    var(--clr-terra);
+  --color-secondary: var(--clr-sienna);
+}
+
+
+/* Fondo general y tipografía */
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: Arial, sans-serif;
+}
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--color-secondary);
+}

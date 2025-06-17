@@ -1,0 +1,68 @@
+/* Dashboard wrapper si lo necesitas */
+.dashboard {
+  padding: 0;
+  margin: 0;
+}
+
+/* Hero como fondo y contenedor principal */
+.hero {
+  position: relative;
+  background-image: url('/assets/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 2rem 1rem 1rem; /* arriba espacio para texto, abajo para grid */
+  box-sizing: border-box;
+}
+
+/* Texto encima */
+.hero-text {
+  color: white;
+  text-shadow: 0 0 5px rgba(0,0,0,0.7);
+  margin-bottom: 1rem;
+}
+.hero-text h2 {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+}
+.hero-text p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+/* Grid dentro del hero, semitransparente si quieres más contraste */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.75rem;
+  /* opcional: fondo semitransparente para destacar sobre la imagen */
+  background: rgba(255,255,255,0.85);
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+/* Tarjetas igual que antes */
+.category-card {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  background: white;
+  border: 1px solid var(--clr-peach);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.card-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.category-card h3 {
+  margin: 0.5rem 0;
+  text-align: center;
+  color: var(--color-text);
+}

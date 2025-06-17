@@ -1,0 +1,23 @@
+/* Asegura que el root use flex y toda la altura */
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--color-bg);  /* fondo crema heredado, opcional si body ya lo tiene */
+}
+
+/* Contenedor principal */
+.content {
+  flex: 1 1 auto;
+  overflow: auto;                      /* scroll interno si hace falta */
+  padding: 1rem;                       /* ajusta este valor si quieres menos espacio */
+
+  /* Opcional: darle un fondo ligero distinto del body */
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+}
+
+/* Footer no se encoge */
+.site-footer {
+  flex-shrink: 0;
+}
