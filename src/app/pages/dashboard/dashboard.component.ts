@@ -1,7 +1,11 @@
+// src/app/pages/dashboard/dashboard.component.ts
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
-interface Category { name: string; img: string; }
+interface Category {
+  name: string;
+  img: string;
+}
 
 @Component({
   selector: 'app-dashboard',
@@ -12,12 +16,12 @@ interface Category { name: string; img: string; }
 })
 export class DashboardComponent {
   categories: Category[] = [
-    { name: 'Panadería',       img: 'bakery.jpg' },
-    { name: 'Lácteos',         img: 'dairy.jpg' },
-    { name: 'Carnes frías',    img: 'deli.jpg' },
-    { name: 'Jugos naturales', img: 'juice-bar.jpg' },
-    { name: 'Cocina saludable',img: 'kitchen.jpg' },
-    { name: 'Frutas y Verduras', img: 'produce.jpg' },
-    { name: 'Buffet',          img: 'buffet.jpg' }
+    { name: 'Bakery',             img: 'bakery.jpg' },
+    { name: 'Dairy',              img: 'dairy.jpg' },
+    { name: 'Deli',               img: 'deli.jpg' },
+    { name: 'Juice Bar',          img: 'juice-bar.jpg' },
+    { name: 'Healthy Kitchen',    img: 'kitchen.jpg' },
+    { name: 'Fruits & Vegetables',img: 'produce.jpg' },
+    { name: 'Buffet',             img: 'buffet.jpg' }
   ];
 }
