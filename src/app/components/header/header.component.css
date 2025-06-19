@@ -3,41 +3,34 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: var(--clr-forest); /* Verde oscuro refinado */
+  background-color: var(--clr-forest);       /* Verde oscuro refinado */
   border-bottom: 2px solid var(--color-accent); /* Durazno elegante */
   height: 64px;
   box-sizing: border-box;
 }
 
-/* Título (logo) */
 .logo h1 {
   margin: 0;
   font-size: 1.5rem;
-  color: #f0f0f0; /* Gris claro, menos duro que blanco puro */
+  color: #f0f0f0;                            /* Gris claro, menos duro que blanco puro */
 }
 
-/* Navegación */
 .main-nav ul {
-  list-style: none;
+  display: flex;
+  gap: 1.5rem;                               /* Espaciado moderno */
   margin: 0;
   padding: 0;
-  display: flex;
-  gap: 1.5rem; /* Espaciado moderno */
-}
-
-.main-nav li {
-  margin-left: 0; /* Quitado para usar gap en ul */
+  list-style: none;
 }
 
 .main-nav a {
   text-decoration: none;
   font-weight: 500;
-  color: #f0f0f0; /* Gris claro */
+  color: #f0f0f0;                            /* Gris claro */
   transition: color 0.3s ease;
 }
 
-/* Hover y enlace activo */
 .main-nav a.active,
 .main-nav a:hover {
-  color: var(--clr-blush); /* Rosa neutro para acento sutil */
+  color: var(--clr-blush);                   /* Rosa neutro para acento sutil */
 }

@@ -1,118 +1,126 @@
 :host {
   display: block;
-  height: 100%; /* ← Cambiado de 100vh a 100% para respetar el layout padre */
+  height: 100%;
   overflow: hidden;
 }
 
 .dashboard {
-  position: relative;
-  width: 100%;
-  height: 100%; /* ← Ya no usamos calc(100vh - 112px) porque app.component lo maneja */
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Fondo de imagen */
-.hero-background {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/assets/hero.jpg');
-  background-size: cover;
-  background-position: center;
+  position: relative;
+}
+
+/* Hero ocupa todo el dashboard */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100%;    /* ← hero ahora cubre todo */
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url('/assets/hero.jpg') center/cover no-repeat;
   filter: brightness(0.5);
   z-index: 1;
 }
 
-/* Contenido encima */
-.dashboard-content {
-  position: relative;
+/* Texto centrado en la parte superior */
+.hero-text {
+  position: absolute;
+  top: 15%;        /* ajustar según lo alto que quieras el texto */
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 2;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1.5rem;
   text-align: center;
-  color: white;
-  box-sizing: border-box;
+  color: #fff;
+  padding: 0 1rem;
 }
 
-/* Texto principal */
 .hero-text h2 {
-  font-size: 2rem;
   margin: 0;
+  font-size: 2.5rem;
 }
 
 .hero-text p {
-  margin: 0.5rem 0 1.5rem;
-  font-size: 1rem;
+  margin: 0.5rem 0 0;
+  font-size: 1.1rem;
 }
 
-/* Grid de categorías */
-.categories-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1rem;
-  max-width: 100%;
+/* Carrusel superpuesto en la base del Hero */
+.carousel-container {
+  position: absolute;
+  bottom: 2rem;    /* un poco de separación del borde */
+  left: 0;
   width: 100%;
-  max-height: 35vh;
+  z-index: 2;
   overflow: hidden;
+  padding: 2px;
 }
 
-/* Card */
-.category-card {
+/* Track del carrusel */
+.carousel-track {
+  display: flex;
+  animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Cards */
+.carousel-track .category-card {
+  flex: 0 0 auto;
+  width: 140px; height: 160px;
+  margin: 0 0.5rem;
   position: relative;
   border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
   border: 2px solid transparent;
-  transition: transform 0.3s ease;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
 }
 
-.category-card:hover {
+.carousel-track .category-card:hover {
+  transform: scale(1.03);
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 12px rgba(223, 167, 114, 0.6);
+}
+
+.carousel-track .category-card img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.carousel-track .category-card:hover img {
   transform: scale(1.05);
-  border-color: #f9a825;
-  box-shadow: 0 0 10px #f9a825;
 }
 
-.category-card img {
-  width: 100%;
-  height: 120px;
-  object-fit: cover;
+.carousel-track .card-overlay {
+  position: absolute; bottom: 0;
+  width: 100%; background: rgba(0,0,0,0.5);
+  padding: 0.5rem; color: #fff; text-align: center;
 }
 
-.card-overlay {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 0.5rem;
-  color: white;
-  text-align: center;
-}
-
-.card-overlay h3 {
-  font-size: 1rem;
-  margin: 0;
+.carousel-track .card-overlay h3 {
+  margin: 0; font-size: 1rem;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
+  .hero-text {
+    top: 10%;
+  }
   .hero-text h2 {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
-
   .hero-text p {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
-
-  .category-card img {
-    height: 100px;
+  .carousel-track .category-card {
+    width: 120px; height: 140px;
   }
 }
-
