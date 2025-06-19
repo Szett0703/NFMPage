@@ -1,57 +1,56 @@
-/* GLOBAL BOX-SIZING */
+/* ========== BOX-SIZING UNIVERSAL ========== */
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
-/* PALETA DE COLORES */
+/* ========== PALETA DE COLORES ========== */
 :root {
-  /* Paleta completa */
-  --clr-olive:       #9c9c64;
-  --clr-beige:       #cfb195;
-  --clr-cream:       #cdbfa7;
-  --clr-blush:       #ecc4b4;
-  --clr-terra:       #dc742c;
-  --clr-peach:       #e49064;
-  --clr-sienna:      #dc844c;
-  --clr-copper:      #cc7850;
-  --clr-apricot:     #e0782c;
+  /* Tonos naturales refinados */
+  --clr-forest:   #2d4a2f;   /* Verde oscuro (header/footer) */
+  --clr-leaf:     #6c9a72;   /* Verde medio (hover/acento) */
+  --clr-beige:    #f4e9dc;   /* Fondo claro elegante */
+  --clr-blush:    #e7c5b5;   /* Rosa neutro/acento */
+  --clr-earth:    #b86e4c;   /* Marrón cálido para acentos */
+  --clr-peach:    #dfa772;   /* Durazno refinado */
 
   /* Alias semánticos */
-  --color-bg:        var(--clr-cream);
-  --color-text:      var(--clr-olive);
-  --color-accent:    var(--clr-terra);
-  --color-secondary: var(--clr-sienna);
+  --color-bg:        var(--clr-beige);
+  --color-text:      var(--clr-forest);
+  --color-accent:    var(--clr-peach);
+  --color-secondary: var(--clr-earth);
+  --color-hover:     var(--clr-blush);
 }
 
-/* FONDO GENERAL Y TIPOGRAFÍA */
+/* ========== TIPOGRAFÍA Y FONDO ========== */
 body {
   margin: 0;
   background-color: var(--color-bg);
   color: var(--color-text);
   font-family: Arial, sans-serif;
-  line-height: 1.5;
   font-size: 16px;
+  line-height: 1.5;
 }
 
+/* ========== ENLACES ========== */
 a {
   color: var(--color-accent);
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 a:hover {
-  color: var(--color-secondary);
+  color: var(--color-hover);
 }
 
-/* IMÁGENES RESPONSIVE */
+/* ========== IMÁGENES RESPONSIVE ========== */
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
 
-/* EVITAR SCROLL LATERAL EN MÓVIL */
+/* ========== PREVENCIÓN SCROLL HORIZONTAL ========== */
 html, body {
   width: 100%;
   overflow-x: hidden;
 }
-

@@ -1,12 +1,12 @@
 .site-footer {
-  height: 48px;
+  height: 33px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #fafafa;
-  color: #555;
+  background-color: var(--clr-forest);       /* Verde oscuro elegante */
+  color: #f0f0f0;                            /* Gris muy claro, suave al ojo */
   font-size: 0.9rem;
-  border-top: 1px solid #e0e0e0;
+  border-top: 2px solid var(--color-accent); /* Línea sutil en durazno */
   box-sizing: border-box;
   margin: 0;
   padding: 0;

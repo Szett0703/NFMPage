@@ -3,36 +3,41 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #fff;
-  border-bottom: 1px solid #e0e0e0;
-  height: 64px; /* ← Altura definida para cálculos */
+  background-color: var(--clr-forest); /* Verde oscuro refinado */
+  border-bottom: 2px solid var(--color-accent); /* Durazno elegante */
+  height: 64px;
   box-sizing: border-box;
 }
 
+/* Título (logo) */
 .logo h1 {
   margin: 0;
   font-size: 1.5rem;
-  color: #2d6a4f;
+  color: #f0f0f0; /* Gris claro, menos duro que blanco puro */
 }
 
+/* Navegación */
 .main-nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
+  gap: 1.5rem; /* Espaciado moderno */
 }
 
 .main-nav li {
-  margin-left: 1.5rem;
+  margin-left: 0; /* Quitado para usar gap en ul */
 }
 
 .main-nav a {
   text-decoration: none;
   font-weight: 500;
-  color: #333;
+  color: #f0f0f0; /* Gris claro */
+  transition: color 0.3s ease;
 }
 
+/* Hover y enlace activo */
 .main-nav a.active,
 .main-nav a:hover {
-  color: #2d6a4f;
+  color: var(--clr-blush); /* Rosa neutro para acento sutil */
 }
