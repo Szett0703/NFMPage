@@ -1,13 +1,13 @@
 :host {
   display: block;
-  height: 100vh;
+  height: 100%; /* ← Cambiado de 100vh a 100% para respetar el layout padre */
   overflow: hidden;
 }
 
 .dashboard {
   position: relative;
   width: 100%;
-  height: calc(100vh - 112px); /* ← AJUSTE CORRECTO */
+  height: 100%; /* ← Ya no usamos calc(100vh - 112px) porque app.component lo maneja */
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -27,7 +27,7 @@
   z-index: 1;
 }
 
-/* Contenido encima, centrado verticalmente */
+/* Contenido encima */
 .dashboard-content {
   position: relative;
   z-index: 2;
@@ -42,7 +42,7 @@
   box-sizing: border-box;
 }
 
-/* Título y subtítulo */
+/* Texto principal */
 .hero-text h2 {
   font-size: 2rem;
   margin: 0;
@@ -53,7 +53,7 @@
   font-size: 1rem;
 }
 
-/* Grid compacto para las cards */
+/* Grid de categorías */
 .categories-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -64,7 +64,7 @@
   overflow: hidden;
 }
 
-/* Card individual */
+/* Card */
 .category-card {
   position: relative;
   border-radius: 10px;
@@ -101,15 +101,18 @@
   margin: 0;
 }
 
-/* Responsive ajustes mínimos */
+/* Responsive */
 @media (max-width: 768px) {
   .hero-text h2 {
     font-size: 1.5rem;
   }
+
   .hero-text p {
     font-size: 0.95rem;
   }
+
   .category-card img {
     height: 100px;
   }
 }
+

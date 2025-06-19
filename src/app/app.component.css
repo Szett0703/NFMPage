@@ -2,15 +2,14 @@
 :host {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* ← deja crecer si es necesario, no forza scroll */
-  background-color: var(--color-bg);
+  height: 100vh;
+  background-color: var(--color-bg);  /* fondo crema heredado, opcional si body ya lo tiene */
 }
 
 /* Contenedor principal */
 .content {
   flex: 1 1 auto;
-  overflow: auto;
-  padding: 0.5rem;                       /* ajusta este valor si quieres menos espacio */
+  overflow: auto;                      /* ajusta este valor si quieres menos espacio */
 
   /* Opcional: darle un fondo ligero distinto del body */
   background-color: rgba(255, 255, 255, 0.8);
