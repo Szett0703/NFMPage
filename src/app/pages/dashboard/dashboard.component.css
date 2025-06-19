@@ -1,68 +1,115 @@
-/* Dashboard wrapper si lo necesitas */
-.dashboard {
-  padding: 0;
-  margin: 0;
+:host {
+  display: block;
+  height: 100vh;
+  overflow: hidden;
 }
 
-/* Hero como fondo y contenedor principal */
-.hero {
+.dashboard {
   position: relative;
+  width: 100%;
+  height: calc(100vh - 112px); /* ← AJUSTE CORRECTO */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Fondo de imagen */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-image: url('/assets/hero.jpg');
   background-size: cover;
   background-position: center;
-  padding: 2rem 1rem 1rem; /* arriba espacio para texto, abajo para grid */
+  filter: brightness(0.5);
+  z-index: 1;
+}
+
+/* Contenido encima, centrado verticalmente */
+.dashboard-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  text-align: center;
+  color: white;
   box-sizing: border-box;
 }
 
-/* Texto encima */
-.hero-text {
-  color: white;
-  text-shadow: 0 0 5px rgba(0,0,0,0.7);
-  margin-bottom: 1rem;
-}
+/* Título y subtítulo */
 .hero-text h2 {
-  margin: 0 0 0.5rem;
   font-size: 2rem;
-}
-.hero-text p {
   margin: 0;
-  font-size: 1.1rem;
 }
 
-/* Grid dentro del hero, semitransparente si quieres más contraste */
+.hero-text p {
+  margin: 0.5rem 0 1.5rem;
+  font-size: 1rem;
+}
+
+/* Grid compacto para las cards */
 .categories-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 0.75rem;
-  /* opcional: fondo semitransparente para destacar sobre la imagen */
-  background: rgba(255,255,255,0.85);
-  padding: 0.5rem;
-  border-radius: 4px;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  max-width: 100%;
+  width: 100%;
+  max-height: 35vh;
+  overflow: hidden;
 }
 
-/* Tarjetas igual que antes */
+/* Card individual */
 .category-card {
-  display: grid;
-  grid-template-rows: auto 1fr;
-  background: white;
-  border: 1px solid var(--clr-peach);
-  border-radius: 4px;
+  position: relative;
+  border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform 0.3s ease;
 }
-.card-img {
-  width: 100%;
-  aspect-ratio: 4/3;
-  overflow: hidden;
+
+.category-card:hover {
+  transform: scale(1.05);
+  border-color: #f9a825;
+  box-shadow: 0 0 10px #f9a825;
 }
-.card-img img {
+
+.category-card img {
   width: 100%;
-  height: 100%;
+  height: 120px;
   object-fit: cover;
-  display: block;
 }
-.category-card h3 {
-  margin: 0.5rem 0;
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0.5rem;
+  color: white;
   text-align: center;
-  color: var(--color-text);
+}
+
+.card-overlay h3 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Responsive ajustes mínimos */
+@media (max-width: 768px) {
+  .hero-text h2 {
+    font-size: 1.5rem;
+  }
+  .hero-text p {
+    font-size: 0.95rem;
+  }
+  .category-card img {
+    height: 100px;
+  }
 }

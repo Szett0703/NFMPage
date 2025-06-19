@@ -1,8 +1,9 @@
-/* Global box-sizing */
+/* GLOBAL BOX-SIZING */
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
+/* PALETA DE COLORES */
 :root {
   /* Paleta completa */
   --clr-olive:       #9c9c64;
@@ -22,18 +23,35 @@
   --color-secondary: var(--clr-sienna);
 }
 
-
-/* Fondo general y tipografía */
+/* FONDO GENERAL Y TIPOGRAFÍA */
 body {
   margin: 0;
   background-color: var(--color-bg);
   color: var(--color-text);
   font-family: Arial, sans-serif;
+  line-height: 1.5;
+  font-size: 16px;
 }
+
 a {
   color: var(--color-accent);
   text-decoration: none;
 }
+
 a:hover {
   color: var(--color-secondary);
 }
+
+/* IMÁGENES RESPONSIVE */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* EVITAR SCROLL LATERAL EN MÓVIL */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+

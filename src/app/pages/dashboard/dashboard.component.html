@@ -1,21 +1,19 @@
-<!-- src/app/pages/dashboard/dashboard.component.html -->
 <section class="dashboard">
-  <!-- Hero Banner -->
-  <div class="hero">
-    <img src="/assets/hero.jpg" alt="Natures Food Markets">
+  <div class="hero-background"></div>
+
+  <div class="dashboard-content">
     <div class="hero-text">
       <h2>Bienvenido a Natures Food Markets</h2>
       <p>Productos frescos, orgánicos y locales para ti.</p>
     </div>
-  </div>
 
-  <!-- Grid de Categorías -->
-  <div class="categories-grid">
-    <div class="category-card" *ngFor="let cat of categories">
-      <div class="card-img">
+    <div class="categories-grid">
+      <div class="category-card" *ngFor="let cat of categories">
         <img src="/assets/{{ cat.img }}" alt="{{ cat.name }}">
+        <div class="card-overlay">
+          <h3>{{ cat.name }}</h3>
+        </div>
       </div>
-      <h3>{{ cat.name }}</h3>
     </div>
   </div>
 </section>

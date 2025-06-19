@@ -12,13 +12,14 @@ interface Category { name: string; img: string; }
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-  categories: Category[] = [
-    { name: 'Deli',            img: 'deli.jpg' },
-    { name: 'Juice Bar',       img: 'juice-bar.jpg' },
-    { name: 'Cocina',          img: 'kitchen.jpg' },
-    { name: 'Buffet',          img: 'buffet.jpg' },
-    { name: 'Dairy',           img: 'dairy.jpg' },
-    { name: 'Bakery',          img: 'bakery.jpg' },
-    { name: 'Produce Fresca',  img: 'produce.jpg' }
-  ];
+  categories = [
+  { name: 'Panadería', img: 'bakery.jpg' },
+  { name: 'Lácteos', img: 'dairy.jpg' },
+  { name: 'Carnes frías', img: 'deli.jpg' },
+  { name: 'Jugos naturales', img: 'juice-bar.jpg' },
+  { name: 'Cocina saludable', img: 'kitchen.jpg' },
+  { name: 'Frutas y Verduras', img: 'produce.jpg' },
+  { name: 'Buffet', img: 'buffet.jpg' }
+];
+
 }
