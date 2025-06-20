@@ -1,50 +1,40 @@
 <!-- src/app/pages/dashboard/dashboard.component.html -->
 <section class="dashboard">
   <div class="hero-section">
-    <div class="hero-background"></div>
-
-    <div class="images-wrapper">
-      <div class="carousel-container images-carousel">
-        <div class="image-track">
-          <ng-container *ngFor="let img of infraImages">
-            <div class="image-slide">
-              <img [src]="img" [alt]="'Infra ' + img">
-            </div>
-          </ng-container>
-          <ng-container *ngFor="let img of infraImages">
-            <div class="image-slide">
-              <img [src]="img" [alt]="'Infra ' + img">
-            </div>
-          </ng-container>
-        </div>
+    <!-- 1) Infra Images Carousel -->
+    <div class="carousel-wrapper images-carousel">
+      <div class="track">
+        <ng-container *ngFor="let img of infraImages">
+          <div class="slide"><img [src]="img" alt="Infra" /></div>
+        </ng-container>
+        <ng-container *ngFor="let img of infraImages">
+          <div class="slide"><img [src]="img" alt="Infra" /></div>
+        </ng-container>
       </div>
     </div>
 
+    <!-- 2) Hero Text -->
     <div class="hero-text">
       <h2>Welcome to Nature’s Food Markets</h2>
       <p>Fresh, organic, and local products for you.</p>
     </div>
 
-    <div class="carousel-spacer"></div>
-
-    <div class="cards-wrapper">
-      <div class="carousel-container cards-carousel">
-        <div class="carousel-track">
+    <!-- 3) Categories Carousel -->
+      <div class="carousel-wrapper cards-carousel">
+        <div class="track">
           <ng-container *ngFor="let cat of categories">
-            <div class="category-card">
-              <img src="/assets/{{ cat.img }}" alt="{{ cat.name }}">
-              <div class="card-overlay"><h3>{{ cat.name }}</h3></div>
+            <div class="card">
+              <img src="/assets/{{ cat.img }}" alt="{{ cat.name }}" />
+              <div class="overlay"><h3>{{ cat.name }}</h3></div>
             </div>
           </ng-container>
           <ng-container *ngFor="let cat of categories">
-            <div class="category-card">
-              <img src="/assets/{{ cat.img }}" alt="{{ cat.name }}">
-              <div class="card-overlay"><h3>{{ cat.name }}</h3></div>
+            <div class="card">
+              <img src="/assets/{{ cat.img }}" alt="{{ cat.name }}" />
+              <div class="overlay"><h3>{{ cat.name }}</h3></div>
             </div>
           </ng-container>
         </div>
       </div>
-    </div>
-
   </div>
 </section>
