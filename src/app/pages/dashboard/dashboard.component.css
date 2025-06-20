@@ -1,3 +1,7 @@
+/* src/app/pages/dashboard/dashboard.component.css */
+/* --------------------------------------------------
+   Global & Hero Styles
+   -------------------------------------------------- */
 :host {
   display: block;
   height: 100%;
@@ -10,27 +14,27 @@
   position: relative;
 }
 
-/* Hero ocupa todo el dashboard */
 .hero-section {
   position: relative;
   width: 100%;
-  height: 100%;    /* ← hero ahora cubre todo */
+  height: 100%;
   overflow: hidden;
 }
 
 .hero-background {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: url('/assets/hero.jpg') center/cover no-repeat;
   filter: brightness(0.5);
   z-index: 1;
 }
 
-/* Texto centrado en la parte superior */
 .hero-text {
   position: absolute;
-  top: 15%;        /* ajustar según lo alto que quieras el texto */
+  top: 15%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
@@ -49,67 +53,131 @@
   font-size: 1.1rem;
 }
 
-/* Carrusel superpuesto en la base del Hero */
-.carousel-container {
+/* --------------------------------------------------
+   Contenedor de Imágenes (infra)
+   -------------------------------------------------- */
+.images-wrapper {
   position: absolute;
-  bottom: 2rem;    /* un poco de separación del borde */
+  bottom: 12rem;
   left: 0;
   width: 100%;
   z-index: 2;
+}
+
+.images-wrapper .carousel-container {
   overflow: hidden;
-  padding: 2px;
 }
 
-/* Track del carrusel */
-.carousel-track {
+.images-carousel .image-track {
   display: flex;
-  animation: scroll 20s linear infinite;
+  align-items: center;
+  gap: 0;
+  animation: scroll-images 15s linear infinite;
 }
 
-@keyframes scroll {
+@keyframes scroll-images {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
-/* Cards */
-.carousel-track .category-card {
+.image-slide {
   flex: 0 0 auto;
-  width: 140px; height: 160px;
+  margin: 0;
+}
+
+.image-slide img {
+  height: 120px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+/* --------------------------------------------------
+   Separador Entre Carruseles
+   -------------------------------------------------- */
+.carousel-spacer {
+  position: absolute;
+  bottom: 8rem;
+  left: 0;
+  width: 100%;
+  height: 4rem;
+  z-index: 2;
+}
+
+/* --------------------------------------------------
+   Contenedor de Categorías (Cards)
+   -------------------------------------------------- */
+.cards-wrapper {
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.cards-wrapper .carousel-container {
+  overflow: hidden;
+}
+
+.cards-carousel .carousel-track {
+  display: flex;
+  animation: scroll-cards 20s linear infinite;
+}
+
+@keyframes scroll-cards {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.category-card {
+  flex: 0 0 auto;
+  width: 140px;
+  height: 160px;
   margin: 0 0.5rem;
   position: relative;
-  border-radius: 10px;
+  border-radius: 0;
   overflow: hidden;
   cursor: pointer;
   border: 2px solid transparent;
-  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+  transition: transform .25s, box-shadow .25s, border-color .25s;
 }
 
-.carousel-track .category-card:hover {
+.category-card:hover {
   transform: scale(1.03);
   border-color: var(--color-accent);
-  box-shadow: 0 4px 12px rgba(223, 167, 114, 0.6);
+  box-shadow: 0 4px 12px rgba(223, 167, 114, .6);
 }
 
-.carousel-track .category-card img {
-  width: 100%; height: 100%; object-fit: cover;
-  transition: transform 0.4s;
+.category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+  transition: transform .4s;
 }
 
-.carousel-track .category-card:hover img {
+.category-card:hover img {
   transform: scale(1.05);
 }
 
-.carousel-track .card-overlay {
-  position: absolute; bottom: 0;
-  width: 100%; background: rgba(0,0,0,0.5);
-  padding: 0.5rem; color: #fff; text-align: center;
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,.5);
+  padding: .5rem;
+  color: #fff;
+  text-align: center;
 }
 
-.carousel-track .card-overlay h3 {
-  margin: 0; font-size: 1rem;
+.card-overlay h3 {
+  margin: 0;
+  font-size: 1rem;
 }
 
-/* Responsive */
+/* --------------------------------------------------
+   Responsive
+   -------------------------------------------------- */
 @media (max-width: 768px) {
   .hero-text {
     top: 10%;
@@ -120,7 +188,11 @@
   .hero-text p {
     font-size: 1rem;
   }
-  .carousel-track .category-card {
-    width: 120px; height: 140px;
+  .category-card {
+    width: 120px;
+    height: 140px;
+  }
+  .image-slide img {
+    height: 80px;
   }
 }
