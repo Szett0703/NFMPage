@@ -1,0 +1,30 @@
+<section class="dashboard">
+  <div class="hero-section">
+    <!-- Hero background -->
+    <div class="hero-background"></div>
+
+    <!-- Centered text -->
+    <div class="hero-text">
+      <h2>Welcome to Nature’s Food Markets</h2>
+      <p>Fresh, organic, and local products for you.</p>
+    </div>
+
+    <!-- Carousel at the bottom of the Hero -->
+    <div class="carousel-container">
+      <div class="carousel-track">
+        <ng-container *ngFor="let cat of categories">
+          <div class="category-card">
+            <img src="/assets/{{ cat.img }}" alt="{{ cat.name }}">
+            <div class="card-overlay"><h3>{{ cat.name }}</h3></div>
+          </div>
+        </ng-container>
+        <ng-container *ngFor="let cat of categories">
+          <div class="category-card">
+            <img src="/assets/{{ cat.img }}" alt="{{ cat.name }}">
+            <div class="card-overlay"><h3>{{ cat.name }}</h3></div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</section>

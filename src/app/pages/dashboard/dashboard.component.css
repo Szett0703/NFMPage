@@ -1,0 +1,126 @@
+:host {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+}
+
+.dashboard {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Hero ocupa todo el dashboard */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100%;    /* ← hero ahora cubre todo */
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url('/assets/hero.jpg') center/cover no-repeat;
+  filter: brightness(0.5);
+  z-index: 1;
+}
+
+/* Texto centrado en la parte superior */
+.hero-text {
+  position: absolute;
+  top: 15%;        /* ajustar según lo alto que quieras el texto */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  padding: 0 1rem;
+}
+
+.hero-text h2 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+.hero-text p {
+  margin: 0.5rem 0 0;
+  font-size: 1.1rem;
+}
+
+/* Carrusel superpuesto en la base del Hero */
+.carousel-container {
+  position: absolute;
+  bottom: 2rem;    /* un poco de separación del borde */
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  overflow: hidden;
+  padding: 2px;
+}
+
+/* Track del carrusel */
+.carousel-track {
+  display: flex;
+  animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Cards */
+.carousel-track .category-card {
+  flex: 0 0 auto;
+  width: 140px; height: 160px;
+  margin: 0 0.5rem;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+
+.carousel-track .category-card:hover {
+  transform: scale(1.03);
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 12px rgba(223, 167, 114, 0.6);
+}
+
+.carousel-track .category-card img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.carousel-track .category-card:hover img {
+  transform: scale(1.05);
+}
+
+.carousel-track .card-overlay {
+  position: absolute; bottom: 0;
+  width: 100%; background: rgba(0,0,0,0.5);
+  padding: 0.5rem; color: #fff; text-align: center;
+}
+
+.carousel-track .card-overlay h3 {
+  margin: 0; font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-text {
+    top: 10%;
+  }
+  .hero-text h2 {
+    font-size: 2rem;
+  }
+  .hero-text p {
+    font-size: 1rem;
+  }
+  .carousel-track .category-card {
+    width: 120px; height: 140px;
+  }
+}

@@ -1,0 +1,55 @@
+/* header.component.css */
+:root {
+  --clr-forest: #2a5310;      /* Verde oscuro refinado */
+  --color-accent: #f5c2b0;    /* Durazno elegante */
+  --clr-blush: #e07a5f;       /* Rosa neutro para acento sutil */
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  background-color: var(--clr-forest);
+  border-bottom: 2px solid var(--color-accent);
+  height: 64px;
+  box-sizing: border-box;
+}
+
+.site-header .logo {
+  display: flex;
+  align-items: center;
+}
+
+.site-header .logo img {
+  max-height: 145px;
+  width: auto;
+  margin-right: 0.75rem;
+}
+
+.site-header .logo h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #f0f0f0;
+}
+
+.main-nav ul {
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-nav a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #f0f0f0;
+  transition: color 0.3s ease;
+}
+
+.main-nav a.active,
+.main-nav a:hover {
+  color: var(--clr-blush);
+}

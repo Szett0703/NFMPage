@@ -1,0 +1,13 @@
+.site-footer {
+  height: 30px;                         /* Altura fija para buena proporción */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--clr-forest); /* Mismo verde oscuro que el header */
+  color: #f0f0f0;                      /* Gris muy claro, suave al ojo */
+  font-size: 0.9rem;
+  border-top: 2px solid var(--color-accent); /* Línea de acento en durazno */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

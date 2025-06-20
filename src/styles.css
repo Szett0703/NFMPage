@@ -1,1 +1,56 @@
-/* You can add global styles to this file, and also import other style files */
+/* ========== BOX-SIZING UNIVERSAL ========== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* ========== PALETA DE COLORES ========== */
+:root {
+  /* Tonos naturales refinados */
+  --clr-forest:   #2d4a2f;   /* Verde oscuro (header/footer) */
+  --clr-leaf:     #6c9a72;   /* Verde medio (hover/acento) */
+  --clr-beige:    #f4e9dc;   /* Fondo claro elegante */
+  --clr-blush:    #e7c5b5;   /* Rosa neutro/acento */
+  --clr-earth:    #b86e4c;   /* Marrón cálido para acentos */
+  --clr-peach:    #dfa772;   /* Durazno refinado */
+
+  /* Alias semánticos */
+  --color-bg:        var(--clr-beige);
+  --color-text:      var(--clr-forest);
+  --color-accent:    var(--clr-peach);
+  --color-secondary: var(--clr-earth);
+  --color-hover:     var(--clr-blush);
+}
+
+/* ========== TIPOGRAFÍA Y FONDO ========== */
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* ========== ENLACES ========== */
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-hover);
+}
+
+/* ========== IMÁGENES RESPONSIVE ========== */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ========== PREVENCIÓN SCROLL HORIZONTAL ========== */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
