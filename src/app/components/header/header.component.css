@@ -53,3 +53,16 @@
 .main-nav a:hover {
   color: var(--clr-blush);
 }
+
+.btn-demo {
+  background: var(--color-accent);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.btn-demo:hover {
+  opacity: 0.9;
+}

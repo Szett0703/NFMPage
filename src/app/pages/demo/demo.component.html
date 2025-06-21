@@ -1,0 +1,30 @@
+<div class="demo-container">
+
+  <!-- Filtros de Categoría -->
+  <div class="filters">
+    <span
+      *ngFor="let cat of categories"
+      (click)="toggleCategory(cat)"
+      [class.active]="selectedCategories.has(cat)"
+      class="filter-chip"
+    >
+      {{ cat }}
+    </span>
+  </div>
+
+  <!-- Grid de Tarjetas -->
+  <div class="cards-grid">
+    <div *ngFor="let product of filteredProducts" class="card">
+      <img [src]="product.image" [alt]="product.name" />
+      <div class="info">
+        <h3>{{ product.name }}</h3>
+        <p>\${{ product.price.toFixed(2) }}</p>
+      </div>
+    </div>
+    <!-- Mensaje si no hay productos -->
+    <p *ngIf="filteredProducts.length === 0" class="no-results">
+      No hay productos en la categoría seleccionada.
+    </p>
+  </div>
+
+</div>
